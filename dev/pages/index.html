@@ -1,0 +1,34 @@
+@layout(default)
+
+@section(isi)
+  <div class="app" v-cloak>
+    <h1>Pecah Satuan</h1>
+    <p>Total</p>
+    <p>{{data ? data.split("").reduce((a, b) => +a + +b) : 0}}</p>
+    <input placeholder="Tulis di sini" type="tel" v-model="data" name="" id="">
+  </div>
+
+  <script>
+    PetiteVue.createApp({
+      data: ""
+    }).mount(".app")
+  </script>
+
+  <style lang="windi">
+    [v-cloak] {
+      @apply hidden
+    }
+    .app {
+      @apply p-3
+    }
+    * {
+      @apply text-center
+    }
+    h1 {
+      @apply text-3xl
+    }
+    input {
+      @apply focus:outline-none border border-black
+    }
+  </style>
+@endsection
